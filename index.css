@@ -85,9 +85,7 @@
   margin: 0;
   padding: 0.8em;
 
-  display: block;
-  text-decoration: none;
-  color: inherit;
+  list-style-type: none;
 
   transition: background-color .3s;
 }
@@ -96,6 +94,12 @@
 }
 .news_read {
   background: repeating-linear-gradient(-45deg, #1d7a7a 0, #1d7a7a 5px, transparent 0, transparent 10px);
+}
+
+.news__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .news__title {
