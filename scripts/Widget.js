@@ -22,7 +22,7 @@ export default class Widget {
     widgetHeaderCountUnreadNews.classList.add('widget__header-count-unread-news');
 
       // Блок с новостями
-    const widgetNewsContainer = document.createElement('div');
+    const widgetNewsContainer = document.createElement('ul');
     widgetNewsContainer.classList.add('widget__news-container');
 
 

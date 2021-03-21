@@ -6,11 +6,15 @@ export default class News {
   createBlock(data) {
     // Создание элементов и наполнение их содежимым
       // Родительский контейнер
-    const news = document.createElement('a');
+    const news = document.createElement('li');
     news.classList.add('news');
-    news.setAttribute('href', data.link);
-    news.setAttribute('target', '__blank');
     data.read ? this.addRead(news) : '';
+
+      // Ссылка
+    const newsLink = document.createElement('a');
+    newsLink.classList.add('news__link');
+    newsLink.setAttribute('href', data.link);
+    newsLink.setAttribute('target', '__blank');
 
       // Заголовок
     const newsTitle = document.createElement('h3');
@@ -38,13 +42,15 @@ export default class News {
 
 
     // Создание дерева элементов (помещение друг в друга)
-    news.appendChild(newsTitle);
-    news.appendChild(newsText);
+    newsLink.appendChild(newsTitle);
+    newsLink.appendChild(newsText);
 
     newsAboutContainer.appendChild(newsDate);
     newsAboutContainer.appendChild(newsAuthor);
 
-    news.appendChild(newsAboutContainer);
+    newsLink.appendChild(newsAboutContainer);
+
+    news.append(newsLink);
 
 
     // Запись готового блока в this для доступа извне
